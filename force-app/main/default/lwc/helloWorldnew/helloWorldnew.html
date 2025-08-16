@@ -1,0 +1,36 @@
+<template>
+    <h1>B2B commerce</h1>
+    <lightning-card title="Heading" icon-name="custom:custom58">
+        <div>{HelloWorld}</div>
+        <div>{mydata.data1}</div>
+        <div>perform addition between {Number1} and {Number2} = {addition}</div>
+        <div>{getArray}</div>
+    </lightning-card>
+    <lightning-button 
+      variant="base"
+      label="clcik me" 
+      onclick={updateMydata} 
+    ></lightning-button>
+    <template for:each='{MyArray}' for:item="item" for:index="index">
+        <div key='{item}'>{item}</div>
+    </template>
+
+    <template iterator:name='{MyArrayObj}'>
+        <div key='{name.value.name}'>{name.value.name} is of age {name.value.age}</div>
+    </template>
+
+    <template lwc:if='{Condition1}'>
+        condition 1
+    </template>
+    <template lwc:if='{Condition2}'>
+        condition 2
+    </template>
+
+    <template if:false={Condition2}>
+        <div>condition 2</div>
+    </template>
+
+    <div class="append" lwc:dom='manual'></div>
+    
+
+</template>
